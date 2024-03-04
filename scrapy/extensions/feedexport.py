@@ -724,3 +724,50 @@ class FeedExporter:
             for function in processors:
                 item = function(item)
         return item
+    
+    def transform_item_field(self, proc_name,former_item, new_item):
+        """
+        Transforms the value of a field in the item using a transformer function.
+        """
+        # fields = self.feeds.get("fields", [])
+        # for processor in self.item_processors.values():
+            
+        for i, item in enumerate(self.feeds["fields"]):
+            if item==former_item:
+                self.feeds["fields"][i] = new_item
+                
+    def remove_item_field(self, del_item):
+        """
+        Removes the specified item from the fields.
+        """
+        
+        for i, item in enumerate(self.feeds["fields"]):
+            if item==del_item:
+                self.feeds["fields"].remove(i)
+    
+    # def combine_item_fields(self, item, fields, delimiter):
+    #     """
+    #     Combines the values of multiple fields in the item into a single field using a delimiter.
+    #     """
+    #     combined_value = delimiter.join(str(item[field]) for field in fields)
+    #     item[fields[0]] = combined_value
+    #     for field in fields[1:]:
+    #         del item[field]
+    #     return item
+    
+    
+    
+    # def _split_items_multi_records(self, item, fields, delimiter):
+    #     """
+    #     Splits the values of a field in the item into multiple items using a delimiter.
+    #     """
+    #     new_items = []
+    #     for field in fields:
+    #         if field in item:
+    #             values = item[field].split(delimiter)
+    #             for value in values:
+    #                 new_item = item.copy()
+    #                 new_item[field] = value
+    #                 new_items.append(new_item)
+    #             del item[field]
+    #     return new_items
