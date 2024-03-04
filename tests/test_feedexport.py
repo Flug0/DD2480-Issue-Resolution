@@ -1866,6 +1866,75 @@ class FeedExportTest(FeedExportTestBase):
         processed_item = feed_exporter.item_processors['file:///tmp/export.json'][0](test_item)
         
         self.assertTrue(processed_item.get('processed'), "Processor should add 'processed': True to the item.")
+        
+    @mock.patch('scrapy.extensions.feedexport.FeedExporter._import_processor')
+    def test_processor_transform_item_correctly(self,mock_import_processor):
+        
+        feeds_setting = {
+            'file:///tmp/export.json': {
+                'format': 'json',
+                'fields': ['name', 'description'],
+                'item_processors': [
+                    {
+                        'path': 'scrapy.processors.transform_item',
+                        'kwargs': {}
+                    }
+                ]
+            }
+        }
+
+        crawler = get_crawler(settings_dict={'FEEDS': feeds_setting})
+        feed_exporter = FeedExporter.from_crawler(crawler)
+        
+        feed_exporter.transform_item_field('file:///tmp/export.json', 'name', 'new_name')
+
+        self.assertTrue("new_name" in feed_exporter.feeds['file:///tmp/export.json']["fields"], "Item Field should have 'new_name'")
+    
+    @mock.patch('scrapy.extensions.feedexport.FeedExporter._import_processor')
+    def test_processor_add_item_correctly(self,mock_import_processor):
+        
+        feeds_setting = {
+            'file:///tmp/export.json': {
+                'format': 'json',
+                'fields': ['name', 'description'],
+                'item_processors': [
+                    {
+                        'path': 'scrapy.processors.transform_item',
+                        'kwargs': {}
+                    }
+                ]
+            }
+        }
+
+        crawler = get_crawler(settings_dict={'FEEDS': feeds_setting})
+        feed_exporter = FeedExporter.from_crawler(crawler)
+        
+        feed_exporter.add_item_field('file:///tmp/export.json', 'age')
+
+        self.assertTrue("age" in feed_exporter.feeds['file:///tmp/export.json']["fields"], "Item Field should have 'age'")
+       
+    @mock.patch('scrapy.extensions.feedexport.FeedExporter._import_processor')
+    def test_processor_remove_item_correctly(self,mock_import_processor):
+        
+        feeds_setting = {
+            'file:///tmp/export.json': {
+                'format': 'json',
+                'fields': ['name', 'description'],
+                'item_processors': [
+                    {
+                        'path': 'scrapy.processors.transform_item',
+                        'kwargs': {}
+                    }
+                ]
+            }
+        }
+
+        crawler = get_crawler(settings_dict={'FEEDS': feeds_setting})
+        feed_exporter = FeedExporter.from_crawler(crawler)
+        
+        feed_exporter.remove_item_field('file:///tmp/export.json', 'name')
+
+        self.assertFalse("name" in feed_exporter.feeds['file:///tmp/export.json']["fields"], "Item Field should not have 'name'")
 
 class FeedPostProcessedExportsTest(FeedExportTestBase):
     __test__ = True
