@@ -725,49 +725,39 @@ class FeedExporter:
                 item = function(item)
         return item
     
-    def transform_item_field(self, proc_name,former_item, new_item):
+    def transform_item_field(self, proc_name, former_item, new_item):
         """
-        Transforms the value of a field in the item using a transformer function.
+        Transforms item name in the field.
+        
+        Variables
+        str proc_name: name of the target processor]
+        str former_item: name of the item to be replaced
+        str new_item: name of the item to replace the former item
         """
-        # fields = self.feeds.get("fields", [])
-        # for processor in self.item_processors.values():
-            
-        for i, item in enumerate(self.feeds["fields"]):
+        for i, item in enumerate(self.feeds[proc_name]["fields"]):
             if item==former_item:
-                self.feeds["fields"][i] = new_item
+                self.feeds[proc_name]["fields"][i] = new_item
+    
+    def add_item_field(self, proc_name, new_item):
+        """
+        Adds the specified item to the fields.
+        
+        Variables
+        str proc_name: name of the target processor
+        str new_item: name of the item to be added
+        """
+        self.feeds[proc_name]["fields"].append(new_item)
                 
-    def remove_item_field(self, del_item):
+    def remove_item_field(self, proc_name, del_item):
         """
         Removes the specified item from the fields.
+        
+        Variables
+        str proc_name: name of the target processor
+        str del_item: name of the item to be removed
         """
         
-        for i, item in enumerate(self.feeds["fields"]):
+        for item in self.feeds[proc_name]["fields"]:
             if item==del_item:
-                self.feeds["fields"].remove(i)
+                self.feeds[proc_name]["fields"].remove(item)
     
-    # def combine_item_fields(self, item, fields, delimiter):
-    #     """
-    #     Combines the values of multiple fields in the item into a single field using a delimiter.
-    #     """
-    #     combined_value = delimiter.join(str(item[field]) for field in fields)
-    #     item[fields[0]] = combined_value
-    #     for field in fields[1:]:
-    #         del item[field]
-    #     return item
-    
-    
-    
-    # def _split_items_multi_records(self, item, fields, delimiter):
-    #     """
-    #     Splits the values of a field in the item into multiple items using a delimiter.
-    #     """
-    #     new_items = []
-    #     for field in fields:
-    #         if field in item:
-    #             values = item[field].split(delimiter)
-    #             for value in values:
-    #                 new_item = item.copy()
-    #                 new_item[field] = value
-    #                 new_items.append(new_item)
-    #             del item[field]
-    #     return new_items
