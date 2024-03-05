@@ -735,10 +735,10 @@ class FeedExporter:
         str new_item: name of the item to replace the former item
         """
         
-        if not self.feeds[proc_name]:
-            raise ValueError("Processor not found")
-        if not self.feeds[proc_name]["fields"]:
-            raise ValueError("Fields not found")
+        if not proc_name in  self.feeds:
+            raise KeyError("Processor not found")
+        if self.feeds[proc_name]["fields"] is None:
+            raise KeyError("Fields not found")
         
         for i, item in enumerate(self.feeds[proc_name]["fields"]):
             if item==former_item:
@@ -753,10 +753,10 @@ class FeedExporter:
         str new_item: name of the item to be added
         """
         
-        if not self.feeds[proc_name]:
-            raise ValueError("Processor not found")
-        if not self.feeds[proc_name]["fields"]:
-            raise ValueError("Fields not found")
+        if not proc_name in  self.feeds:
+            raise KeyError("Processor not found")
+        if self.feeds[proc_name]["fields"] is None:
+            raise KeyError("Fields not found")
         
         self.feeds[proc_name]["fields"].append(new_item)
                 
@@ -769,10 +769,10 @@ class FeedExporter:
         str del_item: name of the item to be removed
         """
         
-        if not self.feeds[proc_name]:
-            raise ValueError("Processor not found")
-        if not self.feeds[proc_name]["fields"]:
-            raise ValueError("Fields not found")
+        if not proc_name in  self.feeds:
+            raise KeyError("Processor not found")
+        if self.feeds[proc_name]["fields"] is None:
+            raise KeyError("Fields not found")
         
         for item in self.feeds[proc_name]["fields"]:
             if item==del_item:
