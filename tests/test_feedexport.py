@@ -1866,6 +1866,44 @@ class FeedExportTest(FeedExportTestBase):
         processed_item = feed_exporter.item_processors['file:///tmp/export.json'][0](test_item)
         
         self.assertTrue(processed_item.get('processed'), "Processor should add 'processed': True to the item.")
+    
+    @mock.patch('scrapy.extensions.feedexport.FeedExporter._import_processor')
+    def test_processor_util_functions_value_error(self,mock_import_processor):
+        
+        feeds_setting = {
+            'file:///tmp/export.json': {
+                'format': 'json',
+                'item_processors': [
+                    {
+                        'path': 'scrapy.processors.transform_item',
+                        'kwargs': {}
+                    }
+                ]
+            }
+        }
+
+        crawler = get_crawler(settings_dict={'FEEDS': feeds_setting})
+        feed_exporter = FeedExporter.from_crawler(crawler)
+        
+        # errors due to non-existent processor functions
+        with self.assertRaises(KeyError):
+            feed_exporter.transform_item_field('file:///tmp/export_new.json', 'name', 'new_name')
+        
+        with self.assertRaises(KeyError):
+            feed_exporter.add_item_field('file:///tmp/export_new.json', 'age')
+        
+        with self.assertRaises(KeyError):
+            feed_exporter.remove_item_field('file:///tmp/export_new.json', 'name')
+        
+        # errors due to non-existent fields
+        with self.assertRaises(KeyError):
+            feed_exporter.transform_item_field('file:///tmp/export.json', 'name', 'new_name')
+        
+        with self.assertRaises(KeyError):
+            feed_exporter.add_item_field('file:///tmp/export.json', 'age')
+        
+        with self.assertRaises(KeyError):
+            feed_exporter.remove_item_field('file:///tmp/export.json', 'name')
         
     @mock.patch('scrapy.extensions.feedexport.FeedExporter._import_processor')
     def test_processor_transform_item_correctly(self,mock_import_processor):
