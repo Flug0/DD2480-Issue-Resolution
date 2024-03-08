@@ -1,0 +1,397 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.7, pytest-7.4.3, pluggy-1.3.0 -- /opt/homebrew/opt/python@3.11/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution
+configfile: pytest.ini
+plugins: cov-4.1.0, typeguard-4.1.5
+collecting ... collected 111 items
+
+tests/test_feedexport.py::FileFeedStorageTest::test_append PASSED        [  0%]
+tests/test_feedexport.py::FileFeedStorageTest::test_interface PASSED     [  1%]
+tests/test_feedexport.py::FileFeedStorageTest::test_overwrite PASSED     [  2%]
+tests/test_feedexport.py::FileFeedStorageTest::test_store_direct_path PASSED [  3%]
+tests/test_feedexport.py::FileFeedStorageTest::test_store_direct_path_relative PASSED [  4%]
+tests/test_feedexport.py::FileFeedStorageTest::test_store_file_uri PASSED [  5%]
+tests/test_feedexport.py::FileFeedStorageTest::test_store_file_uri_makedirs PASSED [  6%]
+tests/test_feedexport.py::FTPFeedStorageTest::test_append FAILED         [  7%]
+tests/test_feedexport.py::FTPFeedStorageTest::test_append_active_mode FAILED [  8%]
+tests/test_feedexport.py::FTPFeedStorageTest::test_overwrite FAILED      [  9%]
+tests/test_feedexport.py::FTPFeedStorageTest::test_overwrite_active_mode FAILED [  9%]
+tests/test_feedexport.py::FTPFeedStorageTest::test_uri_auth_quote PASSED [ 10%]
+tests/test_feedexport.py::BlockingFeedStorageTest::test_default_temp_dir PASSED [ 11%]
+tests/test_feedexport.py::BlockingFeedStorageTest::test_invalid_folder PASSED [ 12%]
+tests/test_feedexport.py::BlockingFeedStorageTest::test_temp_file PASSED [ 13%]
+tests/test_feedexport.py::S3FeedStorageTest::test_from_crawler_with_acl SKIPPED [ 14%]
+tests/test_feedexport.py::S3FeedStorageTest::test_from_crawler_with_endpoint_url SKIPPED [ 15%]
+tests/test_feedexport.py::S3FeedStorageTest::test_from_crawler_with_region_name SKIPPED [ 16%]
+tests/test_feedexport.py::S3FeedStorageTest::test_from_crawler_without_acl SKIPPED [ 17%]
+tests/test_feedexport.py::S3FeedStorageTest::test_init_with_acl SKIPPED  [ 18%]
+tests/test_feedexport.py::S3FeedStorageTest::test_init_with_endpoint_url SKIPPED [ 18%]
+tests/test_feedexport.py::S3FeedStorageTest::test_init_with_region_name SKIPPED [ 19%]
+tests/test_feedexport.py::S3FeedStorageTest::test_init_without_acl SKIPPED [ 20%]
+tests/test_feedexport.py::S3FeedStorageTest::test_overwrite_default SKIPPED [ 21%]
+tests/test_feedexport.py::S3FeedStorageTest::test_overwrite_false SKIPPED [ 22%]
+tests/test_feedexport.py::S3FeedStorageTest::test_parse_credentials SKIPPED [ 23%]
+tests/test_feedexport.py::S3FeedStorageTest::test_store SKIPPED (mis...) [ 24%]
+tests/test_feedexport.py::S3FeedStorageTest::test_store_with_acl SKIPPED [ 25%]
+tests/test_feedexport.py::S3FeedStorageTest::test_store_without_acl SKIPPED [ 26%]
+tests/test_feedexport.py::S3FeedStorageTest::test_without_endpoint_url SKIPPED [ 27%]
+tests/test_feedexport.py::S3FeedStorageTest::test_without_region_name SKIPPED [ 27%]
+tests/test_feedexport.py::GCSFeedStorageTest::test_parse_empty_acl SKIPPED [ 28%]
+tests/test_feedexport.py::GCSFeedStorageTest::test_parse_settings SKIPPED [ 29%]
+tests/test_feedexport.py::GCSFeedStorageTest::test_store SKIPPED (GC...) [ 30%]
+tests/test_feedexport.py::StdoutFeedStorageTest::test_overwrite_default PASSED [ 31%]
+tests/test_feedexport.py::StdoutFeedStorageTest::test_overwrite_true PASSED [ 32%]
+tests/test_feedexport.py::StdoutFeedStorageTest::test_store PASSED       [ 33%]
+tests/test_feedexport.py::FeedExportTest::test_export_based_on_custom_filters PASSED [ 34%]
+tests/test_feedexport.py::FeedExportTest::test_export_based_on_item_classes PASSED [ 35%]
+tests/test_feedexport.py::FeedExportTest::test_export_dicts PASSED       [ 36%]
+tests/test_feedexport.py::FeedExportTest::test_export_encoding PASSED    [ 36%]
+tests/test_feedexport.py::FeedExportTest::test_export_feed_export_fields PASSED [ 37%]
+tests/test_feedexport.py::FeedExportTest::test_export_indentation PASSED [ 38%]
+tests/test_feedexport.py::FeedExportTest::test_export_items PASSED       [ 39%]
+tests/test_feedexport.py::FeedExportTest::test_export_items_comma_separated_field_list PASSED [ 40%]
+tests/test_feedexport.py::FeedExportTest::test_export_items_dict_field_names PASSED [ 41%]
+tests/test_feedexport.py::FeedExportTest::test_export_items_empty_field_list PASSED [ 42%]
+tests/test_feedexport.py::FeedExportTest::test_export_items_field_list PASSED [ 43%]
+tests/test_feedexport.py::FeedExportTest::test_export_items_field_names PASSED [ 44%]
+tests/test_feedexport.py::FeedExportTest::test_export_items_json_field_list PASSED [ 45%]
+tests/test_feedexport.py::FeedExportTest::test_export_items_json_field_names PASSED [ 45%]
+tests/test_feedexport.py::FeedExportTest::test_export_multiple_configs PASSED [ 46%]
+tests/test_feedexport.py::FeedExportTest::test_export_multiple_item_classes PASSED [ 47%]
+tests/test_feedexport.py::FeedExportTest::test_export_no_items_multiple_feeds PASSED [ 48%]
+tests/test_feedexport.py::FeedExportTest::test_export_no_items_not_store_empty PASSED [ 49%]
+tests/test_feedexport.py::FeedExportTest::test_export_no_items_store_empty PASSED [ 50%]
+tests/test_feedexport.py::FeedExportTest::test_export_tuple PASSED       [ 51%]
+tests/test_feedexport.py::FeedExportTest::test_extend_kwargs PASSED      [ 52%]
+tests/test_feedexport.py::FeedExportTest::test_init_exporters_storages_with_crawler PASSED [ 53%]
+tests/test_feedexport.py::FeedExportTest::test_multiple_feeds_failing_logs_blocking_feed_storage PASSED [ 54%]
+tests/test_feedexport.py::FeedExportTest::test_multiple_feeds_success_logs_blocking_feed_storage PASSED [ 54%]
+tests/test_feedexport.py::FeedExportTest::test_start_finish_exporting_items PASSED [ 55%]
+tests/test_feedexport.py::FeedExportTest::test_start_finish_exporting_items_exception PASSED [ 56%]
+tests/test_feedexport.py::FeedExportTest::test_start_finish_exporting_no_items PASSED [ 57%]
+tests/test_feedexport.py::FeedExportTest::test_start_finish_exporting_no_items_exception PASSED [ 58%]
+tests/test_feedexport.py::FeedExportTest::test_stats_file_failed PASSED  [ 59%]
+tests/test_feedexport.py::FeedExportTest::test_stats_file_success PASSED [ 60%]
+tests/test_feedexport.py::FeedExportTest::test_stats_multiple_file PASSED [ 61%]
+tests/test_feedexport.py::FeedExportTest::test_storage_file_no_postprocessing PASSED [ 62%]
+tests/test_feedexport.py::FeedExportTest::test_storage_file_postprocessing PASSED [ 63%]
+tests/test_feedexport.py::FeedExportTest::test_str_uri PASSED            [ 63%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_bz2_plugin PASSED [ 64%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_bz2_plugin_compresslevel PASSED [ 65%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_custom_plugin PASSED [ 66%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_custom_plugin_with_compression PASSED [ 67%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_custom_plugin_with_parameter PASSED [ 68%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_exports_compatibility_with_postproc PASSED [ 69%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_gzip_plugin PASSED [ 70%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_gzip_plugin_compresslevel PASSED [ 71%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_gzip_plugin_filename PASSED [ 72%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_gzip_plugin_mtime PASSED [ 72%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_lzma_plugin PASSED [ 73%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_lzma_plugin_check PASSED [ 74%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_lzma_plugin_filters PASSED [ 75%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_lzma_plugin_format PASSED [ 76%]
+tests/test_feedexport.py::FeedPostProcessedExportsTest::test_lzma_plugin_preset PASSED [ 77%]
+tests/test_feedexport.py::BatchDeliveriesTest::test_batch_item_count_feeds_setting PASSED [ 78%]
+tests/test_feedexport.py::BatchDeliveriesTest::test_batch_path_differ PASSED [ 79%]
+tests/test_feedexport.py::BatchDeliveriesTest::test_export_items PASSED  [ 80%]
+tests/test_feedexport.py::BatchDeliveriesTest::test_export_multiple_configs PASSED [ 81%]
+tests/test_feedexport.py::BatchDeliveriesTest::test_export_no_items_not_store_empty PASSED [ 81%]
+tests/test_feedexport.py::BatchDeliveriesTest::test_export_no_items_store_empty PASSED [ 82%]
+tests/test_feedexport.py::BatchDeliveriesTest::test_s3_export SKIPPED    [ 83%]
+tests/test_feedexport.py::BatchDeliveriesTest::test_stats_batch_file_success PASSED [ 84%]
+tests/test_feedexport.py::BatchDeliveriesTest::test_wrong_path PASSED    [ 85%]
+tests/test_feedexport.py::FeedExporterSignalsTest::test_feed_exporter_signals_sent PASSED [ 86%]
+tests/test_feedexport.py::FeedExporterSignalsTest::test_feed_exporter_signals_sent_deferred PASSED [ 87%]
+tests/test_feedexport.py::FeedExportInitTest::test_absolute_pathlib_as_uri PASSED [ 88%]
+tests/test_feedexport.py::FeedExportInitTest::test_relative_pathlib_as_uri PASSED [ 89%]
+tests/test_feedexport.py::FeedExportInitTest::test_unsupported_format PASSED [ 90%]
+tests/test_feedexport.py::FeedExportInitTest::test_unsupported_storage PASSED [ 90%]
+tests/test_feedexport.py::URIParamsSettingTest::test_custom_param PASSED [ 91%]
+tests/test_feedexport.py::URIParamsSettingTest::test_default PASSED      [ 92%]
+tests/test_feedexport.py::URIParamsSettingTest::test_empty_dict PASSED   [ 93%]
+tests/test_feedexport.py::URIParamsSettingTest::test_none PASSED         [ 94%]
+tests/test_feedexport.py::URIParamsSettingTest::test_params_as_is PASSED [ 95%]
+tests/test_feedexport.py::URIParamsFeedOptionTest::test_custom_param PASSED [ 96%]
+tests/test_feedexport.py::URIParamsFeedOptionTest::test_default PASSED   [ 97%]
+tests/test_feedexport.py::URIParamsFeedOptionTest::test_empty_dict PASSED [ 98%]
+tests/test_feedexport.py::URIParamsFeedOptionTest::test_none PASSED      [ 99%]
+tests/test_feedexport.py::URIParamsFeedOptionTest::test_params_as_is PASSED [100%]
+
+=================================== FAILURES ===================================
+________________________ FTPFeedStorageTest.test_append ________________________
+
+self = <tests.test_feedexport.FTPFeedStorageTest testMethod=test_append>
+
+    @defer.inlineCallbacks
+    def test_append(self):
+        with MockFTPServer() as ftp_server:
+            filename = "file"
+            url = ftp_server.url(filename)
+            feed_options = {"overwrite": False}
+>           yield self._store(url, b"foo", feed_options=feed_options)
+
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/tests/test_feedexport.py:163: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/threadpool.py:269: in inContext
+    result = inContext.theWork()  # type: ignore[attr-defined]
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/threadpool.py:285: in <lambda>
+    inContext.theWork = lambda: context.call(  # type: ignore[attr-defined]
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/context.py:117: in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/context.py:82: in callWithContext
+    return func(*args, **kw)
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/scrapy/extensions/feedexport.py:303: in _store_in_thread
+    ftp_store_file(
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/scrapy/utils/ftp.py:36: in ftp_store_file
+    ftp.connect(host, port)
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ftplib.py:158: in connect
+    self.sock = socket.create_connection((self.host, self.port), self.timeout,
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:851: in create_connection
+    raise exceptions[0]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+address = ('127.0.0.1', 2121), timeout = <object object at 0x100be4870>
+source_address = None
+
+    def create_connection(address, timeout=_GLOBAL_DEFAULT_TIMEOUT,
+                          source_address=None, *, all_errors=False):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        A host of '' or port 0 tells the OS to use the default. When a connection
+        cannot be created, raises the last error if *all_errors* is False,
+        and an ExceptionGroup of all errors if *all_errors* is True.
+        """
+    
+        host, port = address
+        exceptions = []
+        for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket(af, socktype, proto)
+                if timeout is not _GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+>               sock.connect(sa)
+E               ConnectionRefusedError: [Errno 61] Connection refused
+
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:836: ConnectionRefusedError
+__________________ FTPFeedStorageTest.test_append_active_mode __________________
+
+self = <tests.test_feedexport.FTPFeedStorageTest testMethod=test_append_active_mode>
+
+    @defer.inlineCallbacks
+    def test_append_active_mode(self):
+        with MockFTPServer() as ftp_server:
+            settings = {"FEED_STORAGE_FTP_ACTIVE": True}
+            filename = "file"
+            url = ftp_server.url(filename)
+            feed_options = {"overwrite": False}
+>           yield self._store(url, b"foo", feed_options=feed_options, settings=settings)
+
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/tests/test_feedexport.py:183: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/threadpool.py:269: in inContext
+    result = inContext.theWork()  # type: ignore[attr-defined]
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/threadpool.py:285: in <lambda>
+    inContext.theWork = lambda: context.call(  # type: ignore[attr-defined]
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/context.py:117: in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/context.py:82: in callWithContext
+    return func(*args, **kw)
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/scrapy/extensions/feedexport.py:303: in _store_in_thread
+    ftp_store_file(
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/scrapy/utils/ftp.py:36: in ftp_store_file
+    ftp.connect(host, port)
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ftplib.py:158: in connect
+    self.sock = socket.create_connection((self.host, self.port), self.timeout,
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:851: in create_connection
+    raise exceptions[0]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+address = ('127.0.0.1', 2121), timeout = <object object at 0x100be4870>
+source_address = None
+
+    def create_connection(address, timeout=_GLOBAL_DEFAULT_TIMEOUT,
+                          source_address=None, *, all_errors=False):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        A host of '' or port 0 tells the OS to use the default. When a connection
+        cannot be created, raises the last error if *all_errors* is False,
+        and an ExceptionGroup of all errors if *all_errors* is True.
+        """
+    
+        host, port = address
+        exceptions = []
+        for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket(af, socktype, proto)
+                if timeout is not _GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+>               sock.connect(sa)
+E               ConnectionRefusedError: [Errno 61] Connection refused
+
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:836: ConnectionRefusedError
+______________________ FTPFeedStorageTest.test_overwrite _______________________
+
+self = <tests.test_feedexport.FTPFeedStorageTest testMethod=test_overwrite>
+
+    @defer.inlineCallbacks
+    def test_overwrite(self):
+        with MockFTPServer() as ftp_server:
+            filename = "file"
+            url = ftp_server.url(filename)
+>           yield self._store(url, b"foo")
+
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/tests/test_feedexport.py:172: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/threadpool.py:269: in inContext
+    result = inContext.theWork()  # type: ignore[attr-defined]
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/threadpool.py:285: in <lambda>
+    inContext.theWork = lambda: context.call(  # type: ignore[attr-defined]
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/context.py:117: in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/context.py:82: in callWithContext
+    return func(*args, **kw)
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/scrapy/extensions/feedexport.py:303: in _store_in_thread
+    ftp_store_file(
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/scrapy/utils/ftp.py:36: in ftp_store_file
+    ftp.connect(host, port)
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ftplib.py:158: in connect
+    self.sock = socket.create_connection((self.host, self.port), self.timeout,
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:851: in create_connection
+    raise exceptions[0]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+address = ('127.0.0.1', 2121), timeout = <object object at 0x100be4870>
+source_address = None
+
+    def create_connection(address, timeout=_GLOBAL_DEFAULT_TIMEOUT,
+                          source_address=None, *, all_errors=False):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        A host of '' or port 0 tells the OS to use the default. When a connection
+        cannot be created, raises the last error if *all_errors* is False,
+        and an ExceptionGroup of all errors if *all_errors* is True.
+        """
+    
+        host, port = address
+        exceptions = []
+        for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket(af, socktype, proto)
+                if timeout is not _GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+>               sock.connect(sa)
+E               ConnectionRefusedError: [Errno 61] Connection refused
+
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:836: ConnectionRefusedError
+________________ FTPFeedStorageTest.test_overwrite_active_mode _________________
+
+self = <tests.test_feedexport.FTPFeedStorageTest testMethod=test_overwrite_active_mode>
+
+    @defer.inlineCallbacks
+    def test_overwrite_active_mode(self):
+        with MockFTPServer() as ftp_server:
+            settings = {"FEED_STORAGE_FTP_ACTIVE": True}
+            filename = "file"
+            url = ftp_server.url(filename)
+>           yield self._store(url, b"foo", settings=settings)
+
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/tests/test_feedexport.py:193: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/threadpool.py:269: in inContext
+    result = inContext.theWork()  # type: ignore[attr-defined]
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/threadpool.py:285: in <lambda>
+    inContext.theWork = lambda: context.call(  # type: ignore[attr-defined]
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/context.py:117: in callWithContext
+    return self.currentContext().callWithContext(ctx, func, *args, **kw)
+/opt/homebrew/lib/python3.11/site-packages/twisted/python/context.py:82: in callWithContext
+    return func(*args, **kw)
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/scrapy/extensions/feedexport.py:303: in _store_in_thread
+    ftp_store_file(
+/Users/eloidieme/Documents/cours-kth/software_engineering/DD2480-Issue-Resolution/scrapy/utils/ftp.py:36: in ftp_store_file
+    ftp.connect(host, port)
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ftplib.py:158: in connect
+    self.sock = socket.create_connection((self.host, self.port), self.timeout,
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:851: in create_connection
+    raise exceptions[0]
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+address = ('127.0.0.1', 2121), timeout = <object object at 0x100be4870>
+source_address = None
+
+    def create_connection(address, timeout=_GLOBAL_DEFAULT_TIMEOUT,
+                          source_address=None, *, all_errors=False):
+        """Connect to *address* and return the socket object.
+    
+        Convenience function.  Connect to *address* (a 2-tuple ``(host,
+        port)``) and return the socket object.  Passing the optional
+        *timeout* parameter will set the timeout on the socket instance
+        before attempting to connect.  If no *timeout* is supplied, the
+        global default timeout setting returned by :func:`getdefaulttimeout`
+        is used.  If *source_address* is set it must be a tuple of (host, port)
+        for the socket to bind as a source address before making the connection.
+        A host of '' or port 0 tells the OS to use the default. When a connection
+        cannot be created, raises the last error if *all_errors* is False,
+        and an ExceptionGroup of all errors if *all_errors* is True.
+        """
+    
+        host, port = address
+        exceptions = []
+        for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            sock = None
+            try:
+                sock = socket(af, socktype, proto)
+                if timeout is not _GLOBAL_DEFAULT_TIMEOUT:
+                    sock.settimeout(timeout)
+                if source_address:
+                    sock.bind(source_address)
+>               sock.connect(sa)
+E               ConnectionRefusedError: [Errno 61] Connection refused
+
+/opt/homebrew/Cellar/python@3.11/3.11.7_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py:836: ConnectionRefusedError
+=============================== warnings summary ===============================
+../../../../../../opt/homebrew/lib/python3.11/site-packages/twisted/web/http.py:103
+  /opt/homebrew/lib/python3.11/site-packages/twisted/web/http.py:103: DeprecationWarning: 'cgi' is deprecated and slated for removal in Python 3.13
+    import cgi
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_feedexport.py::FTPFeedStorageTest::test_append - Connection...
+FAILED tests/test_feedexport.py::FTPFeedStorageTest::test_append_active_mode
+FAILED tests/test_feedexport.py::FTPFeedStorageTest::test_overwrite - Connect...
+FAILED tests/test_feedexport.py::FTPFeedStorageTest::test_overwrite_active_mode
+============= 4 failed, 87 passed, 20 skipped, 1 warning in 47.35s =============
